@@ -27,7 +27,7 @@ $$
 
 ## q4
 ### (i)
-1) $\mathbb{E}[|Z(t)|] = mathbb{E}[Z(t)] = 1 < \infty$ 
+1) $\mathbb{E}[|Z(t)|] = \mathbb{E}[Z(t)] = 1 < \infty$ 
 2) $Z(t)$ is $\mathcal F$-measurable
 3) for $s\le t$, we have
 $$
@@ -57,7 +57,11 @@ since we have
 $$
 0\le exp\{\sigma X(t\wedge\tau_{m})\}\le e^{\sigma m}
 $$
-which is bounded. take limit on both sides of the equation in (ii), we get
+which is bounded. so when $\tau=\infty$, let $t\to\infty$, we have 
+$$
+\lim_{t\to\infty}exp\{\sigma X(t\wedge\tau_{m}) - (\sigma\mu + \frac{1}{2}\sigma^2)(t\wedge\tau_{m})\}\le\lim_{t\to\infty}exp\{\sigma m - (\sigma\mu + \frac{1}{2}\sigma^2)t\}=0
+$$
+when $\tau<\infty$, take limit on both sides of the equation in (ii), we get
 $$
 \lim_{t\to\infty}exp\{\sigma X(t\wedge\tau_{m}) - (\sigma\mu + \frac{1}{2}\sigma^2)(t\wedge\tau_{m})\} = \mathbb{I}_{(\tau < \infty)}exp\{\sigma m-(\sigma\mu + \frac{1}{2}\sigma^2)\tau_{m}\}
 $$
@@ -66,7 +70,7 @@ $$
 \mathbb{E}[exp\{\sigma m-(\sigma\mu + \frac{1}{2}\sigma^2)\tau_{m}\}\mathbb{I}_{(\tau < \infty)}] = 1 \\
 \mathbb{E}[exp\{-(\sigma\mu + \frac{1}{2}\sigma^2)\tau_{m}\}\mathbb{I}_{(\tau < \infty)}] = e^{-\sigma m}
 $$
-take limit on both sides as $\sigma\to 0$, we get $\mathbb{E}[\tau_m < \infty] = 1$, equivalently
+take limit on both sides as $\sigma\to 0$, we get $\mathbb{E}[\mathbb{I}_{\tau_m < \infty}] = 1$, equivalently
 $$
 \mathbb{P}[\tau_m < \infty] = 1
 $$
@@ -96,6 +100,13 @@ $$
 \mathbb{E}[exp\{\sigma m-(\sigma\mu + \frac{1}{2}\sigma^2)\tau_{m}\}\mathbb{I}_{(\tau < \infty)}] = 1 \\
 \mathbb{E}[exp\{-(\sigma\mu + \frac{1}{2}\sigma^2)\tau_{m}\}\mathbb{I}_{(\tau < \infty)}] = e^{-\sigma m}
 $$
-and then get
-
+take limit on both sides as $\sigma\to -2\mu$, we get $\mathbb{E}[\mathbb{I}_{\tau_m < \infty}] = e^{2m\mu} = e^{-2m|\mu|}$, equivalently
+$$
+\mathbb{P}\{\tau_m < \infty\} = e^{-2m|\mu|} < 1
+$$
+set $\alpha = (\sigma\mu + \frac{1}{2}\sigma^2)$, since $\sigma$ is positive, then we get $\sigma = -\mu + \sqrt{2\alpha + \mu^2}$.
+</br> so for all $\alpha > 0$, we have
+$$
+\mathbb{E}[e^{-\alpha\tau_{m}}] = e^{m\mu-m\sqrt{2\alpha + \mu^2}}
+$$
 
