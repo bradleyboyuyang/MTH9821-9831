@@ -99,27 +99,3 @@ $$
 and then get
 
 
-
-1. Note that $W(t) \sim \mathcal{N}(0,t)$ and 
-$$
-Z(t) = \exp\left\{\sigma W(t) - \frac{1}{2}\sigma^2t\right\},
-$$
-we can obtain that
-$$
-\mathbb{E}|Z(t)| = \int_{\mathbb{R}}\frac{1}{\sqrt{2\pi t}}e^{-\frac{w^2}{2t}}\cdot\exp\left\{\sigma w - \frac{1}{2}\sigma^2t\right\}dw=1<\infty.
-$$
-2. $Z(t)$ is $\mathcal{F}_t$-measurable because $Z(t)$ can be seen as a continuous function of $W(t)$ which is $\mathcal{F}_t$-measurable by definition.
-3. For any $t\geq s\geq0$, we have
-$$
-\begin{align*}
-\mathbb{E}[Z(t)|W(s)] &= e^{\sigma W(s)}\mathbb{E}[\exp\left\{\sigma (W(t) - W(s))- \frac{1}{2}\sigma^2t\right\}|W(s)]\\
-&= e^{\sigma W(s)}\mathbb{E}[\exp\left\{\sigma (W(t) - W(s))- \frac{1}{2}\sigma^2t\right\}]\\
-&= e^{\sigma W(s)}\int_{\mathbb{R}}\frac{1}{\sqrt{2\pi (t-s)}}e^{-\frac{w^2}{2(t-s)}}\cdot\exp\left\{\sigma w - \frac{1}{2}\sigma^2t\right\}dw\\
-&= e^{\sigma W(s)}\exp\left\{\frac{\sigma^2}{2}(t-s) - \frac{1}{2}\sigma^2t\right\}dw\\
-&= \exp\left\{\sigma W(s) - \frac{1}{2}\sigma^2s\right\} = Z(s)\\
-\end{align*}
-$$
-
-By 1-3, we conclude that W(t) is a martingale with respect to $\mathcal{F}_t$.
-
-
