@@ -5,6 +5,7 @@
 #include"black_scholes_pricer.hpp"
 #include"bsm.hpp"
 #include"CallPricer.hpp"
+#include"PutPricer.hpp"
 
 int main(){
 
@@ -18,6 +19,9 @@ int main(){
     double DeltaCall = DeltablackScholesCall(S0, K,  T, sigma, q, r);
     double VegaCall = VegablackScholesCall( S0, K,  T,  sigma,  q, r);
 
+    double PutPrice = blackScholesPut(S0, K, T, sigma, q, r);
+    double DeltaPut = DeltablackScholesPut(S0, K,  T, sigma, q, r);
+    double VegaPut = VegablackScholesPut( S0, K,  T,  sigma,  q, r);
     //store to csv file
     std::ofstream outputFile("resultsHW1.csv");
     unsigned int N = 10000;
@@ -25,6 +29,15 @@ int main(){
         auto [S,C,Delta,Vega] = Call_pricer(N,S0,K,T,sigma,q,r);
         outputFile << N << ";" << C - callPrice << ";" <<Delta - DeltaCall << ";" << Vega - VegaCall <<  std::endl; 
         std::cout << N << " " << C - callPrice << " " <<Delta - DeltaCall << " " << Vega - VegaCall << " " <<  std::endl; 
+        N*=2;
+    }
+	std::cout << std::endl;
+
+    N = 10000;
+    for(int i =0; i < 10; i++){
+        auto [S,P,Delta,Vega] = Put_pricer(N,S0,K,T,sigma,q,r);
+        outputFile << N << ";" << P - PutPrice << ";" <<Delta - DeltaPut << ";" << Vega - VegaPut <<  std::endl; 
+        std::cout << N << " " << P - PutPrice << " " <<Delta - DeltaPut << " " << Vega - VegaPut << " " <<  std::endl; 
         N*=2;
     }
     return 0;
