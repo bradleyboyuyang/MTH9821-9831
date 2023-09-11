@@ -27,18 +27,18 @@ int main(){
     unsigned int N = 10000;
     for(int i =0; i < 10; i++){
         auto [S,C,Delta,Vega] = Call_pricer(N,S0,K,T,sigma,q,r);
-        outputFile << N << ";" << C - callPrice << ";" <<Delta - DeltaCall << ";" << Vega - VegaCall <<  std::endl; 
-        std::cout << N << " " << C - callPrice << " " <<Delta - DeltaCall << " " << Vega - VegaCall << " " <<  std::endl; 
+        outputFile << N << ";" << C <<";" << std::sqrt(N) *std::abs(C - callPrice) << ";" <<Delta << ";" << std::sqrt(N)* std::abs(Delta - DeltaCall) << ";" << Vega << ";" <<std::sqrt(N)*std::abs( Vega - VegaCall) <<  std::endl; 
+		std::cout  << N << ";" << C <<";" << std::sqrt(N) *std::abs(C - callPrice) << ";" <<Delta << ";" << std::sqrt(N)* std::abs(Delta - DeltaCall) << ";" << Vega << ";" <<std::sqrt(N)*std::abs( Vega - VegaCall) <<  std::endl; 
         N*=2;
     }
 	std::cout << std::endl;
-
     N = 10000;
     for(int i =0; i < 10; i++){
         auto [S,P,Delta,Vega] = Put_pricer(N,S0,K,T,sigma,q,r);
-        outputFile << N << ";" << P - PutPrice << ";" <<Delta - DeltaPut << ";" << Vega - VegaPut <<  std::endl; 
-        std::cout << N << " " << P - PutPrice << " " <<Delta - DeltaPut << " " << Vega - VegaPut << " " <<  std::endl; 
+        outputFile << N << ";" << P <<";" << std::sqrt(N) *std::abs(P - PutPrice) << ";" <<Delta << ";" << std::sqrt(N)* std::abs(Delta - DeltaPut) << ";" << Vega << ";" <<std::sqrt(N)*std::abs( Vega - VegaPut) <<  std::endl; 
+		std::cout << N << ";" << P <<";" << std::sqrt(N) *std::abs(P - PutPrice) << ";" <<Delta << ";" << std::sqrt(N)* std::abs(Delta - DeltaPut) << ";" << Vega << ";" <<std::sqrt(N)*std::abs( Vega - VegaPut) <<  std::endl; 
         N*=2;
     }
+	std::cout << std::endl;
     return 0;
 }

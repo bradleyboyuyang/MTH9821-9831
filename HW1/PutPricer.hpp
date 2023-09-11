@@ -11,8 +11,8 @@ std::tuple<double, double, double,double> Put_pricer(unsigned int N, double S0, 
     double PSum =0;
     double DeltaSum = 0;
     double VegaSum = 0;
-    for(int i = 1; i < N; i++){
-        double zi = bsm(double(i)/N);
+    for(int i = 1; i < N + 2; i++){
+        double zi = bsm(double(i)/(N + 2));
         double Si = S0* std::exp((r - q - sigma*sigma/2) * T + sigma * std::sqrt(T) *zi);
         
         double Pi = 0;
@@ -29,10 +29,10 @@ std::tuple<double, double, double,double> Put_pricer(unsigned int N, double S0, 
         VegaSum +=Vegai;
     }
 
-    SSum /= (N-2);
-    PSum /= (N-2);
-    DeltaSum /= (N-2);
-    VegaSum /= (N-2);
+    SSum /= (N);
+    PSum /= (N);
+    DeltaSum /= (N);
+    VegaSum /= (N);
     return {SSum, PSum, DeltaSum,VegaSum};
 }
 #endif
