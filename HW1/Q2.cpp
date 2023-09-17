@@ -114,25 +114,25 @@ std::vector<double> valuing_down_and_out_calls(int n, int m) {
     }
     V_est /= n;
 
-    double approximation_error = fabs(V_est - V_calc);
+    double approximation_error = V_est - V_calc;
     return {V_calc, V_est, approximation_error};
 }
 
 int main() {
     for (int k = 0; k <= 9; ++k) {
-        int n = 50 * pow(2, k);
-        int m = 200;
+        int n = 100000;
+        int m = 50 * pow(2, k);
         std::vector<double> results = valuing_down_and_out_calls(n, m);
         std::cout << n * m << " " << m << " " << n << " " << results[0] << " " << results[1] << " " << results[2] << std::endl;
     }
 
-    for (int k = 0; k <= 9; ++k) {
-        int Nk = 10000 * pow(2, k);
-        int mk = ceil(pow(Nk, 1.0 / 3) * pow(T, 2.0 / 3));
-        int nk = floor(Nk / mk);
-        std::vector<double> results = valuing_down_and_out_calls(nk, mk);
-        std::cout << Nk << " " << mk << " " << nk << " " << results[0] << " " << results[1] << " " << results[2] << std::endl;
-    }
+    // for (int k = 0; k <= 9; ++k) {
+    //     int Nk = 10000 * pow(2, k);
+    //     int mk = ceil(pow(Nk, 1.0 / 3) * pow(T, 2.0 / 3));
+    //     int nk = floor(Nk / mk);
+    //     std::vector<double> results = valuing_down_and_out_calls(nk, mk);
+    //     std::cout << Nk << " " << mk << " " << nk << " " << results[0] << " " << results[1] << " " << results[2] << std::endl;
+    // }
 
     return 0;
 }
