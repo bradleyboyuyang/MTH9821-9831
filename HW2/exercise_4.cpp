@@ -3,6 +3,10 @@
 #include<cmath>
 #include <random>
 
+#include"black_scholes_pricer.hpp"
+
+//Need to check the timesteps
+//
 double lambda =4;
 double sqV = 0.35;
 double eta = 0.25;
@@ -34,22 +38,27 @@ int main(){
  
 	unsigned int n = 1000;
 	unsigned int N = 2* 87500*32;
+	double Vbar = 0.35*0.35;
 
     std::vector<double> V(n);
     std::vector<double> S(n);
+    std::vector<double> OpVal(n);
 	//Given parameters	
 	S[0] = 50;
    	V[0] = 0.09;
+	OpVal[0]=0;	
 	for(int i = 1; i < n; i++){
         double z1 = distribution(gen);
         double z2 = distribution(gen);
-        double Vbar = std::accumulate(V.begin(), V.begin() +i , 0.)/V.size();
+        //double Vbar = std::accumulate(V.begin(), V.begin() +i , 0.)/V.size();
 		S[i] = S[i-1] * std::exp( (r - max(V[i-1], 0)/2)*dt + std::sqrt(max(V[i-1], 0) )* std::sqrt(dt)*z1);
-        V[i] = max(V[i-1], 0) - lambda *( max(V[i-1], 0) -Vbar) + eta * std::sqrt(dt) * ( rho* z1  + std::sqrt(1  - rho*rho) * z2);
-        std::cout << S[i] << " " << V[i] << " " << Vbar << std::endl;
+        V[i] = max(V[i-1], 0) - lambda *( max(V[i-1], 0) -Vbar) * dt + eta * max(V[i-1], 0) * std::sqrt(dt) * ( rho* z1  + std::sqrt(1  - rho*rho) * z2);
+		OpVal[i] = blackScholesCall(S[i], 50, 1./2., std::sqrt(V[i]), 0.0, 0.05);
+        //std::cout << S[i] << " " << V[i] << " " << Vbar << std::endl;
     }
-        
-    double Vbar = std::accumulate(V.begin(), V.end(), 0)/(n - 1);
+       
+	std::cout << std::accumulate(OpVal.begin(), OpVal.end(), 0.0)/n << std::endl;	
+    //double Vbar = std::accumulate(V.begin(), V.end(), 0)/(n - 1);
 std::cout << Vbar << std::endl;
     return 0;
 }
