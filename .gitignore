@@ -75,3 +75,5 @@
 
 *.app
 
+#fckn appl stuff
+.DS_Store
