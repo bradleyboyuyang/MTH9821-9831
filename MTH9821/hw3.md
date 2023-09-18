@@ -1,11 +1,17 @@
+## Numeric HW3
+Boyu Yang: question 4
+Julius Gruber and Ziyuan Li: question 2 & 3
+Yicheng Sun: general question, question 1
+
+
 ## General Questions
 ### (1)
 Construct the following portfolio: 
-</br>i) long $e^{-q\delta t}$ unit of $S$; ii) short $S(0)e^{-q\delta t}$ unit of cash
-</br> Then at time 0, we have $V(0) = e^{-q\delta t}S(0) - S(0)e^{-q\delta t} = 0$.
+i) long $e^{-q\delta t}$ unit of $S$; ii) short $S(0)e^{-q\delta t}$ unit of cash
+ Then at time 0, we have $V(0) = e^{-q\delta t}S(0) - S(0)e^{-q\delta t} = 0$.
 
 At time $\delta t$, we have $V(\delta t) = S(\delta t) - S(0)e^{(r-q)\delta t}$
-</br>According to the no arbitrage condition, we obtain
+According to the no arbitrage condition, we obtain
 $$
 V_{up}(\delta t) = S(0)(u-e^{(r-q)\delta t}) >0 \\
 V_{down}(\delta t) = S(0)(d-e^{(r-q)\delta t}) <0
