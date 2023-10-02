@@ -1,10 +1,3 @@
-//
-//  TreePricer.hpp
-//  TreePricer
-//
-//  Created by 王明森 on 11/22/22.
-//
-
 #ifndef TreePricer_hpp
 #define TreePricer_hpp
 

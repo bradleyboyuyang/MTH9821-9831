@@ -1,10 +1,3 @@
-//
-//  BTree.cpp
-//  TreePricer
-//
-//  Created by 王明森 on 11/22/22.
-//
-
 #ifndef BTree_cpp
 #define BTree_cpp
 

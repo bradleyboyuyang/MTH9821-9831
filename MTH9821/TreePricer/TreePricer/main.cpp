@@ -1,10 +1,3 @@
-//
-//  main.cpp
-//  TreePricer
-//
-//  Created by 王明森 on 11/22/22.
-//
-
 #include <iostream>
 #include "EuropeanPut.hpp"
 #include "AmericanPut.hpp"
@@ -133,7 +126,7 @@ void Final() {
 
 int main(int argc, const char * argv[]) {
     
-    std::cout << std::fixed << std::setprecision(8);
+    std::cout << std::fixed << std::setprecision(6);
 //    TestBasicBTree();
 //    TestBasicTTree();
     

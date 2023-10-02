@@ -1,10 +1,3 @@
-//
-//  TTree.cpp
-//  TreePricer
-//
-//  Created by 王明森 on 11/22/22.
-//
-
 #include "TTree.hpp"
 #include <cmath>
 #include<cassert>

@@ -1,10 +1,3 @@
-//
-//  AmericanPut.cpp
-//  TreePricer
-//
-//  Created by 王明森 on 11/22/22.
-//
-
 #include "AmericanPut.hpp"
 #include "BTree.hpp"
 #include "TTree.hpp"
