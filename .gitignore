@@ -75,3 +75,13 @@
 
 *.app
 
+MTH9821/hw5/.vs/hw5/v17/.suo
+*.db
+*.db-shm
+*.db-wal
+*.ipch
+*.opendb
+*.sln
+*.vcxproj
+*.filters
+*.user
