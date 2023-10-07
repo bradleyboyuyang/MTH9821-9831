@@ -1,5 +1,6 @@
 #include "regression.h"
 #include <tuple>
+#include <Eigen/BDCSVD>
 
 namespace linalg {
 

@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <Eigen/Dense>
-
+#include <cstdint>
 namespace montecarlo {
     namespace regression {
         typedef Eigen::ArrayXd arr;

@@ -4,6 +4,7 @@
 #include <tuple>
 #include <Eigen/Dense>
 
+
 namespace linalg {
     namespace regression {
         typedef Eigen::ArrayXd arr;
