@@ -1,0 +1,3 @@
+/Users/liziyuan/Desktop/problem2_correct/cmake-build-debug/CMakeFiles/problem2_correct.dir
+/Users/liziyuan/Desktop/problem2_correct/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/liziyuan/Desktop/problem2_correct/cmake-build-debug/CMakeFiles/rebuild_cache.dir
