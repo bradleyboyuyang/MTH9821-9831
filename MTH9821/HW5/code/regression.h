@@ -7,14 +7,14 @@
 namespace linalg {
     namespace regression {
 		typedef Eigen::ArrayXd arr;
-		typedef Eigen::ArrayXXd arr2;
-        arr evaluate_polynomial(const arr& coefficients, const arr& x);
-        arr evaluate_hermite_polynomial(const arr& coefficients, const arr& x);
-        arr evaluate_hermite_polynomial_standardized(const arr& coefficients, const arr& z, const double mu, const double sigma);
-        arr2 vandermonde(const arr& x, const uint degree);
-        arr2 hermite_vandermonde(const arr& x, const uint degree);
-        std::tuple<arr2, double, double> hermite_vandermonde_standardized(const arr& x, const uint degree);
-        std::pair<arr,arr> fit_linear_regression(const arr2& X, const arr& y, const bool precondition) ;
+		typedef Eigen::ArrayXXd mat;
+        Eigen::VectorXd evaluate_polynomial(const Eigen::VectorXd& coefficients, const Eigen::VectorXd& x);
+        Eigen::VectorXd evaluate_hermite_polynomial(const Eigen::VectorXd& coefficients, const Eigen::VectorXd& x);
+        Eigen::VectorXd evaluate_hermite_polynomial_standardized(const Eigen::VectorXd& coefficients, const Eigen::VectorXd& z, const double mu, const double sigma);
+        Eigen::MatrixXd vandermonde(const Eigen::VectorXd& x, const uint degree);
+        Eigen::MatrixXd hermite_vandermonde(const Eigen::VectorXd& x, const uint degree);
+        std::tuple<Eigen::MatrixXd, double, double> hermite_vandermonde_standardized(const Eigen::VectorXd& x, const uint degree);
+        std::pair<Eigen::VectorXd,Eigen::VectorXd> fit_linear_regression(const Eigen::MatrixXd& X, const Eigen::VectorXd& y, const bool precondition) ;
     }
 }
 

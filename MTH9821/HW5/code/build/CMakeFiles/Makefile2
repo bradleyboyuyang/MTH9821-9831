@@ -54,10 +54,10 @@ RM = /opt/homebrew/Cellar/cmake/3.27.6/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/juliusgruber/Downloads/code
+CMAKE_SOURCE_DIR = /Users/juliusgruber/Desktop/MTH9821-9831/MTH9821/HW5/code
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/juliusgruber/Downloads/code/build
+CMAKE_BINARY_DIR = /Users/juliusgruber/Desktop/MTH9821-9831/MTH9821/HW5/code/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -81,14 +81,14 @@ clean: CMakeFiles/basic_transformation.dir/clean
 CMakeFiles/basic_transformation.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_transformation.dir/build.make CMakeFiles/basic_transformation.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_transformation.dir/build.make CMakeFiles/basic_transformation.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/juliusgruber/Downloads/code/build/CMakeFiles --progress-num=1,2,3 "Built target basic_transformation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/juliusgruber/Desktop/MTH9821-9831/MTH9821/HW5/code/build/CMakeFiles --progress-num=1,2,3 "Built target basic_transformation"
 .PHONY : CMakeFiles/basic_transformation.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/basic_transformation.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juliusgruber/Downloads/code/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juliusgruber/Desktop/MTH9821-9831/MTH9821/HW5/code/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/basic_transformation.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juliusgruber/Downloads/code/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juliusgruber/Desktop/MTH9821-9831/MTH9821/HW5/code/build/CMakeFiles 0
 .PHONY : CMakeFiles/basic_transformation.dir/rule
 
 # Convenience name for target.
