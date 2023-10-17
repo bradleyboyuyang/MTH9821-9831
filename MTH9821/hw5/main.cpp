@@ -1,140 +1,81 @@
-﻿#include<iostream>
-#include"regression.h"
-#include <Eigen/Core>
+#include "regression.h"
+#include "mc_regression.h"
+#include "american_pricers.h"
 
-using arr = Eigen::VectorXd;
-using mat = Eigen::MatrixXd;
+#include <iostream>
+#include <random>
+
+int main(){
+
+	typedef Eigen::ArrayXd arr;
+	typedef Eigen::ArrayXXd arr2;
+    using namespace montecarlo;
+    std::default_random_engine gen;
+	arr inputarr(4);
+	inputarr(0) = -1.0; inputarr(1) = 0.0; inputarr(2) = 1.0; inputarr(3) = 4.0;
+	arr inputarr2(4);
+	inputarr2(0) = 3.0; inputarr2(1) = 9.0; inputarr2(2) = -2.0; inputarr2(3) = 6.0;
+	arr2 test = std::get<0>(linalg::regression::hermite_vandermonde_standardized(inputarr, 3));
+    arr2 test2 = (linalg::regression::hermite_vandermonde(inputarr, 3));
+    arr2 test3 = linalg::regression::vandermonde(inputarr, 3);
+	auto newtest = linalg::regression::fit_linear_regression(test3, inputarr2, true);
+	std::cout << newtest.first << std::endl;
+	std::cout << newtest.second << std::endl;
+//	std::cout << test << std::endl;
+//    std::cout << test2 << std::endl;
+//    std::cout << test3 << std::endl;
+    //std::cout << newtest << std::endl;
+	//std::cout << linalg::regression::evaluate_polynomial(inputarr, inputarr2) << std::endl;
+	//std::cout << linalg::regression::evaluate_polynomial2(inputarr, inputarr2);
+
+    const double spot = 40.5;
+    const double strike = 44;
+    const double maturity = 0.6;
+    const double interest_rate = 0.04;
+    const int w = -1;
 
 
-void evaluate_polynomial() {
-    arr coefficients(4);
-    coefficients << 1.0, -2.0, 3.0, -4.0; // Set your polynomial coefficients
+    const int K = 100;
+    const int N = 10000;
+    const int M = 6;
+    const double dt = maturity / M;
+    const double sigma = 0.2;
 
-    arr x_values(3);
-    x_values << 1.0, 2.0, 3.0; // Set the points at which to evaluate the polynomial
+    arr P(K);
+    arr P1(K);
+    arr P2(K);
+    arr P3(K);
 
-    arr result = linalg::regression::evaluate_polynomial(coefficients, x_values);
-    std::cout << "Result: " << std::endl << result << std::endl;
-}
+    for(int k = 0; k < K; k++){
+        //generate paths
+        arr2 paths(N, M );
+        paths.col(0).fill(spot);
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < M-1; j++) {
+                std::normal_distribution<double> z(0.0, 1.0);
+                paths(i, j + 1) = paths(i, j) * exp((interest_rate - 0.5 * sigma * sigma) * dt + sigma * sqrt(dt) * z(gen));
+            }
+        }
+        montecarlo::regression::PolynomialMCRegression mc_regression(M, 3, true);
 
-void hermite_polynomial() {
-    // Define test coefficients and x values
-    arr coefficients(5);
-    coefficients << 1, 2, 3, 4, 5; // Example coefficients for the Hermite polynomial
-    arr x(5);
-    x << -1, 0, 1, 2, 3; // Example x values
-
-    // Call the function with test data
-    arr result = linalg::regression::evaluate_hermite_polynomial(coefficients, x);
-
-    // Output the result
-    std::cout << "Input coefficients: " << coefficients.transpose() << std::endl;
-    std::cout << "Input x values: " << x.transpose() << std::endl;
-    std::cout << "Result: " << result.transpose() << std::endl;
-}
-
-void test_vandermonde() {
-    arr x(3);
-    x << 1, 2, 3;
-    mat expected(3, 3);
-    expected << 1, 1, 1,
-        1, 2, 4,
-        1, 3, 9;
-
-    mat result = linalg::regression::vandermonde(x, 2);
-
-    // Comparing if result is approximately equal to expected (you can adjust the precision as needed)
-    if ((result - expected).norm() < 1e-9) {
-        std::cout << "Vandermot test worked" << std::endl;
+        P(k) = regression_pricer_backward(spot, paths, w, strike, maturity, interest_rate,
+                                              mc_regression, MonteCarloRegressionMethod::Tsitsiklis_VanRoy);
+        P1(k) = regression_pricer_forward(spot, paths, w, strike, maturity, interest_rate,
+                                              mc_regression);
+        P2(k) = regression_pricer_backward(spot, paths, w, strike, maturity, interest_rate,
+                                               mc_regression, MonteCarloRegressionMethod::Longstaff_Schwartz);
+        P3(k) = regression_pricer_forward(spot, paths, w, strike, maturity, interest_rate,
+                                              mc_regression);
     }
-    else {
-        std::cout << "Vandermot test did not work" << std::endl;
-    }
+    double P_mean = P.mean();
+    double P1_mean = P1.mean();
+    double P2_mean = P2.mean();
+    double P3_mean = P3.mean();
 
-}
-
-void test_evaluate_hermite_polynomial_standardized() {
-    // Define test inputs
-    arr coefficients(3);
-    coefficients << 1, 2, 3;
-    arr x(3);
-    x << 1, 2, 3;
-    double mu = 2;
-    double sigma = 1;
-
-    // Define expected outputs (you should calculate these based on your inputs)
-    arr expected(3);
-    // The expected values are calculated manually or using another reliable method
-    // for demonstration purposes, let's assume the expected results for standardized
-    // inputs -1, 0, 1 are -2, 1, and 6 respectively.
-    expected << -2, 1, 6;
-
-    // Call the function and get the result
-    arr result = linalg::regression::evaluate_hermite_polynomial_standardized(coefficients, x, mu, sigma);
-
-    // Compare result to expected output with some tolerance
-    if ((result - expected).norm() < 1e-6) {
-        std::cout << "hermit polynomial test worked" << std::endl;
-    }
-    else {
-        std::cout << (result - expected).norm() << std::endl;
-        std::cout << "hermit polynomial did not work" << std::endl;
-
-    }
-}
-
-using arr2 = Eigen::MatrixXd;
-
-bool test_fit_linear_regression() {
-    // Define test inputs
-    arr2 X(3, 2);
-    X << 1, 1,
-        2, 1,
-        3, 1;
-
-    arr y(3);
-    y << 1, 2, 3;
-
-    // Call the function with preconditioning set to false
-    auto result = linalg::regression::fit_linear_regression(X, y, false);
-
-    // Extract beta and fitted values from the result
-    arr beta = result.first;
-    arr fitted = result.second;
-
-    // Define expected outputs
-    arr expected_beta(2);
-    expected_beta << 1, 0;  // Expecting a slope of 1 and intercept of 0 for this simple case
-
-    arr expected_fitted(3);
-    expected_fitted << 1, 2, 3;  // Expecting fitted values to match original y for this simple case
-
-    // Tolerance for floating-point comparison
-    double tol = 1e-9;
-
-    // Compare result to expected output with some tolerance
-    bool beta_close = (beta - expected_beta).cwiseAbs().maxCoeff() < tol;
-    bool fitted_close = (fitted - expected_fitted).cwiseAbs().maxCoeff() < tol;
-
-    if (beta_close && fitted_close) {
-        std::cout << "passed test" << std::endl;
-    }
-    else {
-        std::cout << "did not pass test" << std::endl;
-    }
-}
+    std::cout << "Tsitsiklis Van Roy: " << P_mean << std::endl;
+    std::cout << "Tsitsiklis Van Roy Forward: " << P1_mean << std::endl;
+    std::cout << "Longstaff Schwartz: " << P2_mean << std::endl;
+    std::cout << "Longstaff Schwartz Forward: " << P3_mean << std::endl;
 
 
-
-
-
-
-int main() {
-
-    evaluate_polynomial();
-    hermite_polynomial();
-    test_vandermonde();
-    test_evaluate_hermite_polynomial_standardized();
-    test_fit_linear_regression();
-    return 0;
 }

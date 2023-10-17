@@ -3,11 +3,12 @@
 
 #include <vector>
 #include <Eigen/Dense>
-#include <cstdint>
+
 namespace montecarlo {
     namespace regression {
-        typedef Eigen::ArrayXd arr;
-        typedef Eigen::ArrayXXd arr2;
+        typedef unsigned int uint;
+		typedef Eigen::ArrayXd arr;
+		typedef Eigen::ArrayXXd arr2;
 
         struct MCRegression {
             const uint _times;
@@ -22,7 +23,7 @@ namespace montecarlo {
             virtual ~MCRegression();
         };
 
-        struct PolynomialMCRegression : MCRegression {
+        struct PolynomialMCRegression: MCRegression {
             const uint degree;
             const bool precondition;
             std::vector<arr> _coeffs;
@@ -31,7 +32,7 @@ namespace montecarlo {
             arr predict(const uint time, const arr& x) const override;
         };
 
-        struct HermiteMCRegression : MCRegression {
+        struct HermiteMCRegression: MCRegression {
             const uint degree;
             const bool precondition;
             const bool standardize;
