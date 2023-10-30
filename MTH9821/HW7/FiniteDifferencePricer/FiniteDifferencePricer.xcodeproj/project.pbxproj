@@ -1,0 +1,328 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CA16916B2946D03F00EBB494 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CA16916A2946D03F00EBB494 /* main.cpp */; };
+		CA1691732946D29700EBB494 /* EuropeanOption.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CA1691712946D29700EBB494 /* EuropeanOption.cpp */; };
+		CA1691762946D2C600EBB494 /* finite_difference_pricer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CA1691742946D2C600EBB494 /* finite_difference_pricer.cpp */; };
+		CA16917D2946E45D00EBB494 /* IterativeSolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CA1691772946E45D00EBB494 /* IterativeSolver.cpp */; };
+		CA16917E2946E45D00EBB494 /* Decomposer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CA16917A2946E45D00EBB494 /* Decomposer.cpp */; };
+		CA16917F2946E45D00EBB494 /* LinearSolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CA16917B2946E45D00EBB494 /* LinearSolver.cpp */; };
+		CA1691832947B40400EBB494 /* finite_difference_engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CA1691812947B40400EBB494 /* finite_difference_engine.cpp */; };
+		CA8EF8FA29501DA1007F6AAA /* finite_difference_pricer_discrete_dividend.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CA8EF8F829501DA1007F6AAA /* finite_difference_pricer_discrete_dividend.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CA1691652946D03F00EBB494 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CA1691672946D03F00EBB494 /* FiniteDifferencePricer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FiniteDifferencePricer; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA16916A2946D03F00EBB494 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CA1691712946D29700EBB494 /* EuropeanOption.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EuropeanOption.cpp; sourceTree = "<group>"; };
+		CA1691722946D29700EBB494 /* EuropeanOption.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EuropeanOption.hpp; sourceTree = "<group>"; };
+		CA1691742946D2C600EBB494 /* finite_difference_pricer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = finite_difference_pricer.cpp; sourceTree = "<group>"; };
+		CA1691752946D2C600EBB494 /* finite_difference_pricer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = finite_difference_pricer.hpp; sourceTree = "<group>"; };
+		CA1691772946E45D00EBB494 /* IterativeSolver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IterativeSolver.cpp; sourceTree = "<group>"; };
+		CA1691782946E45D00EBB494 /* LinearSolver.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LinearSolver.hpp; sourceTree = "<group>"; };
+		CA1691792946E45D00EBB494 /* IterativeSolver.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IterativeSolver.hpp; sourceTree = "<group>"; };
+		CA16917A2946E45D00EBB494 /* Decomposer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Decomposer.cpp; sourceTree = "<group>"; };
+		CA16917B2946E45D00EBB494 /* LinearSolver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinearSolver.cpp; sourceTree = "<group>"; };
+		CA16917C2946E45D00EBB494 /* Decomposer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Decomposer.hpp; sourceTree = "<group>"; };
+		CA1691802946E48500EBB494 /* EigenCommonHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EigenCommonHeader.h; sourceTree = "<group>"; };
+		CA1691812947B40400EBB494 /* finite_difference_engine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = finite_difference_engine.cpp; sourceTree = "<group>"; };
+		CA1691822947B40400EBB494 /* finite_difference_engine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = finite_difference_engine.hpp; sourceTree = "<group>"; };
+		CA8EF8F829501DA1007F6AAA /* finite_difference_pricer_discrete_dividend.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = finite_difference_pricer_discrete_dividend.cpp; sourceTree = "<group>"; };
+		CA8EF8F929501DA1007F6AAA /* finite_difference_pricer_discrete_dividend.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = finite_difference_pricer_discrete_dividend.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA1691642946D03F00EBB494 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CA16915E2946D03F00EBB494 = {
+			isa = PBXGroup;
+			children = (
+				CA1691692946D03F00EBB494 /* FiniteDifferencePricer */,
+				CA1691682946D03F00EBB494 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CA1691682946D03F00EBB494 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA1691672946D03F00EBB494 /* FiniteDifferencePricer */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA1691692946D03F00EBB494 /* FiniteDifferencePricer */ = {
+			isa = PBXGroup;
+			children = (
+				CA16916A2946D03F00EBB494 /* main.cpp */,
+				CA1691812947B40400EBB494 /* finite_difference_engine.cpp */,
+				CA1691822947B40400EBB494 /* finite_difference_engine.hpp */,
+				CA1691742946D2C600EBB494 /* finite_difference_pricer.cpp */,
+				CA1691752946D2C600EBB494 /* finite_difference_pricer.hpp */,
+				CA8EF8F829501DA1007F6AAA /* finite_difference_pricer_discrete_dividend.cpp */,
+				CA8EF8F929501DA1007F6AAA /* finite_difference_pricer_discrete_dividend.hpp */,
+				CA16917A2946E45D00EBB494 /* Decomposer.cpp */,
+				CA16917C2946E45D00EBB494 /* Decomposer.hpp */,
+				CA1691772946E45D00EBB494 /* IterativeSolver.cpp */,
+				CA1691792946E45D00EBB494 /* IterativeSolver.hpp */,
+				CA16917B2946E45D00EBB494 /* LinearSolver.cpp */,
+				CA1691782946E45D00EBB494 /* LinearSolver.hpp */,
+				CA1691712946D29700EBB494 /* EuropeanOption.cpp */,
+				CA1691722946D29700EBB494 /* EuropeanOption.hpp */,
+				CA1691802946E48500EBB494 /* EigenCommonHeader.h */,
+			);
+			path = FiniteDifferencePricer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CA1691662946D03F00EBB494 /* FiniteDifferencePricer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA16916E2946D03F00EBB494 /* Build configuration list for PBXNativeTarget "FiniteDifferencePricer" */;
+			buildPhases = (
+				CA1691632946D03F00EBB494 /* Sources */,
+				CA1691642946D03F00EBB494 /* Frameworks */,
+				CA1691652946D03F00EBB494 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FiniteDifferencePricer;
+			productName = FiniteDifferencePricer;
+			productReference = CA1691672946D03F00EBB494 /* FiniteDifferencePricer */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA16915F2946D03F00EBB494 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					CA1691662946D03F00EBB494 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = CA1691622946D03F00EBB494 /* Build configuration list for PBXProject "FiniteDifferencePricer" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CA16915E2946D03F00EBB494;
+			productRefGroup = CA1691682946D03F00EBB494 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA1691662946D03F00EBB494 /* FiniteDifferencePricer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA1691632946D03F00EBB494 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA16917D2946E45D00EBB494 /* IterativeSolver.cpp in Sources */,
+				CA16916B2946D03F00EBB494 /* main.cpp in Sources */,
+				CA1691732946D29700EBB494 /* EuropeanOption.cpp in Sources */,
+				CA16917F2946E45D00EBB494 /* LinearSolver.cpp in Sources */,
+				CA8EF8FA29501DA1007F6AAA /* finite_difference_pricer_discrete_dividend.cpp in Sources */,
+				CA1691762946D2C600EBB494 /* finite_difference_pricer.cpp in Sources */,
+				CA1691832947B40400EBB494 /* finite_difference_engine.cpp in Sources */,
+				CA16917E2946E45D00EBB494 /* Decomposer.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CA16916C2946D03F00EBB494 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CA16916D2946D03F00EBB494 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CA16916F2946D03F00EBB494 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KUY84ZT6AH;
+				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CA1691702946D03F00EBB494 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KUY84ZT6AH;
+				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CA1691622946D03F00EBB494 /* Build configuration list for PBXProject "FiniteDifferencePricer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA16916C2946D03F00EBB494 /* Debug */,
+				CA16916D2946D03F00EBB494 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA16916E2946D03F00EBB494 /* Build configuration list for PBXNativeTarget "FiniteDifferencePricer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA16916F2946D03F00EBB494 /* Debug */,
+				CA1691702946D03F00EBB494 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CA16915F2946D03F00EBB494 /* Project object */;
+}
