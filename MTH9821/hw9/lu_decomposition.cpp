@@ -6,6 +6,7 @@
 //
 
 #include "lu_decomposition.hpp"
+#include <iostream>
 
 std::tuple<mat, mat> lu_no_pivoting(mat A) {
     int n = static_cast<int>(A.rows());
@@ -25,18 +26,23 @@ std::tuple<mat, mat> lu_no_pivoting(mat A) {
 }
 
 
-std::tuple<permutation, mat, mat> lu_row_pivoting(const mat& A) {
+std::tuple<permutation, mat, mat> lu_row_pivoting(mat A) {
     int n = static_cast<int>(A.rows());
+    
     permutation P(n);
+    P.setIdentity();
     mat L = mat::Identity(n, n);
     mat U = A;
 
     for (int k = 0; k < n - 1; ++k) {
         // Partial Pivoting
         int pivot_index = k;
-        for (int i = k + 1; i < n; ++i) {
-            if (std::abs(U(i, k)) > std::abs(U(pivot_index, k))) {
-                pivot_index = i;
+        double max_val = std::abs(A(k, k));
+
+        for (int j = k + 1; j < n; j++) {
+            if (std::abs(U(j, k)) > max_val) {
+                max_val = std::abs(U(j, k));
+                pivot_index = j;
             }
         }
 
@@ -45,12 +51,13 @@ std::tuple<permutation, mat, mat> lu_row_pivoting(const mat& A) {
             U.row(k).swap(U.row(pivot_index));
 
             // Swap rows in L
-            L.row(k).swap(L.row(pivot_index));
-
-            // Apply permutation to P
-            P.applyTranspositionOnTheLeft(k, pivot_index);
+            L.block(k, 0, 1, k).swap(L.block(pivot_index, 0, 1, k));
+            
+            int tmp = P.indices()[k];
+            P.indices()[k] = P.indices()[pivot_index];
+            P.indices()[pivot_index] = tmp;
         }
-
+    
         // Gaussian elimination
         for (int i = k + 1; i < n; ++i) {
             L(i, k) = U(i, k) / U(k, k);
