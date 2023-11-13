@@ -25,6 +25,9 @@
 /* Begin PBXFileReference section */
 		15262EF22B001E2A00D7DE5D /* LinkedList */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LinkedList; sourceTree = BUILT_PRODUCTS_DIR; };
 		15262EF52B001E2A00D7DE5D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		15262EFD2B00222300D7DE5D /* Node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
+		15262F002B00224300D7DE5D /* LinkedList.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LinkedList.hpp; sourceTree = "<group>"; };
+		15262F032B00249D00D7DE5D /* ListIterator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ListIterator.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				15262EF52B001E2A00D7DE5D /* main.cpp */,
+				15262F032B00249D00D7DE5D /* ListIterator.hpp */,
+				15262F002B00224300D7DE5D /* LinkedList.hpp */,
+				15262EFD2B00222300D7DE5D /* Node.hpp */,
 			);
 			path = LinkedList;
 			sourceTree = "<group>";

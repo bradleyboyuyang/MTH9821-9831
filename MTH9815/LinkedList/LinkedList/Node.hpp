@@ -10,4 +10,16 @@
 
 #include <stdio.h>
 
+template <typename T>
+
+// Node class for LinkedList
+class Node {
+public:
+    T data;
+    Node<T>* next;
+    
+    // constructor to initialize a Node with given value
+    Node(const T& value) : data(value), next(nullptr) {};
+};
+
 #endif /* Node_hpp */
