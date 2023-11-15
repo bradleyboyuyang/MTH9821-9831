@@ -1,23 +1,29 @@
 //
-//  LinkedList.hpp
-//  LinkedList
+//  LinkedList.h
+//  hw1
 //
-//  Created by Yicheng.Sun on 11/11/2023.
+//  Created by Yicheng.Sun on 14/11/2023.
 //
 
-#ifndef LinkedList_hpp
-#define LinkedList_hpp
-
-#include <stdio.h>
-#include "iostream"
-#include "Node.hpp"
-#include "ListIterator.hpp"
+#ifndef LinkedList_h
+#define LinkedList_h
 
 template <typename T>
+class Node {
+public:
+    T data;
+    Node<T>* next;
 
-// LinkedList class with basic operations
+    Node(const T& value) : data(value), next(nullptr) {}
+};
+
+// forward declaration
+template <typename T>
+class ListIterator;
+
+template <typename T>
 class LinkedList {
-private:
+protected:
     Node<T>* head;
     int size;
 
@@ -108,6 +114,7 @@ public:
         }
 
         Node<T>* removedNode;
+        T removedData;
         if (index == 0) {
             removedNode = head;
             head = head->next;
@@ -120,7 +127,7 @@ public:
             current->next = current->next->next;
         }
 
-        T& removedData = removedNode->data;
+        removedData = removedNode->data;
         
         // update the LinkedList size
         size--;
@@ -138,16 +145,33 @@ public:
         return ListIterator<T>(head);
     };
 
-    // destructor to clean up memory used by the list
-    ~LinkedList() {
-        Node<T>* current = head;
-        Node<T>* next;
-        while (current != nullptr) {
-            next = current->next;
-            delete current;
-            current = next;
+};
+
+template <typename T>
+class ListIterator {
+protected:
+    Node<T>* current;
+
+public:
+    // constructor to initialize an iterator with a starting node
+    ListIterator(Node<T>* startNode) : current(startNode) {};
+
+    // check if there is another element to return in this iterator
+    bool HasNext() {
+        return current != nullptr;
+    };
+
+    // return the next element in this iterator
+    T& Next() {
+        // Throw an exception for invalid access
+        if (current == nullptr) {
+            throw std::out_of_range("Trying to access an element beyond the end of the list");
         }
+
+        T& value = current->data;
+        current = current->next;
+        return value;
     };
 };
 
-#endif /* LinkedList_hpp */
+#endif /* LinkedList_h */
