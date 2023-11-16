@@ -77,7 +77,6 @@ public:
         }
 
         DNode<T>* removedNode;
-        T removedData;
 
         if (index == 0) {
             removedNode = static_cast<DNode<T>*>(this->head);
@@ -97,7 +96,7 @@ public:
             }
         }
 
-        removedData = removedNode->data;
+        T& removedData = removedNode->data;
         
         this->size--;
 
