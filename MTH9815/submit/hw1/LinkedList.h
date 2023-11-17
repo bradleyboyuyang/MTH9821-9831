@@ -14,10 +14,11 @@ public:
     T data;
     Node<T>* next;
 
+    // Constructor of Node
     Node(const T& value) : data(value), next(nullptr) {}
 };
 
-// forward declaration
+// Forward declaration
 template <typename T>
 class ListIterator;
 
@@ -28,14 +29,14 @@ protected:
     int size;
 
 public:
-    // constructor to initialize an empty LinkedList
+    // Constructor to initialize an empty LinkedList
     LinkedList() : head(nullptr), size(0) {};
 
-    // add the specified element at the end of the list
+    // Add the specified element at the end of the list
     void Add(const T& value) {
         Node<T>* newNode = new Node<T>(value);
         
-        // check if the LinkedList is empty
+        // Check if the LinkedList is empty
         if (head == nullptr) {
             head = newNode;
         } else {
@@ -50,16 +51,17 @@ public:
         size++;
     };
 
-    // add the specified element at the specified index
+    // Add the specified element at the specified index
     void Insert(const T& value, int index) {
-        // check the validity of index
+        // Check the validity of index
         if (index < 0 || index > size) {
             std::cerr << "Index out of range." << std::endl;
             return;
         }
-
+        
         Node<T>* newNode = new Node<T>(value);
-
+        
+        // Check if the inserted Node is the head
         if (index == 0) {
             newNode->next = head;
             head = newNode;
@@ -76,9 +78,9 @@ public:
         size++;
     };
 
-    // get the element at the specified index
+    // Get the element at the specified index
     T& Get(int index) {
-        // check the validity of index
+        // Check the validity of index
         if (index < 0 || index >= size) {
             throw std::out_of_range("Index out of range.");
         }
@@ -91,7 +93,7 @@ public:
         return current->data;
     };
 
-    // retrieve the index of the specified element (-1 if it does not exist in the list)
+    // Retrieve the index of the specified element (-1 if it does not exist in the list)
     int IndexOf(const T& value) {
         int index = 0;
         Node<T>* current = head;
@@ -106,14 +108,16 @@ public:
         return -1;
     };
 
-    // remove the element at the specified index and return it
+    // Remove the element at the specified index and return it
     T& Remove(int index){
-        // check the validity of index
+        // Check the validity of index
         if (index < 0 || index >= size) {
             throw std::out_of_range("Index out of range.");
         }
 
         Node<T>* removedNode;
+        
+        // Check if the removed Node is the head
         if (index == 0) {
             removedNode = head;
             head = head->next;
@@ -134,12 +138,12 @@ public:
         return removedData;
     };
 
-    // return the size of the list
+    // Return the size of the list
     int Size() {
         return size;
     };
     
-    // return an iterator on this list
+    // Return an iterator on this list
     ListIterator<T> Iterator() {
         return ListIterator<T>(head);
     };
@@ -152,15 +156,15 @@ protected:
     Node<T>* current;
 
 public:
-    // constructor to initialize an iterator with a starting node
+    // Constructor to initialize an iterator with a starting node
     ListIterator(Node<T>* startNode) : current(startNode) {};
 
-    // check if there is another element to return in this iterator
+    // Check if there is another element to return in this iterator
     bool HasNext() {
         return current != nullptr;
     };
 
-    // return the next element in this iterator
+    // Return the next element in this iterator
     T& Next() {
         // Throw an exception for invalid access
         if (current == nullptr) {

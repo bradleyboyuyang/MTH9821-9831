@@ -10,6 +10,7 @@
 #include "DoublyLinkedList.h"
 #include "HashTable.h"
 
+// test function of LinkedList
 void test_linkedlist() {
     LinkedList<int> myList;
 
@@ -29,7 +30,7 @@ void test_linkedlist() {
     }
     std::cout << std::endl;
 
-    // Test other methods
+    // Test insert method
     myList.Insert(15, 1);
     std::cout << "Size after insertion: " << myList.Size() << std::endl;
     std::cout << "List after insertion: ";
@@ -39,11 +40,14 @@ void test_linkedlist() {
     }
     std::cout << std::endl;
     
+    // Test get method
     std::cout << "Element at index 1: " << myList.Get(1) << std::endl;
-
+    
+    // Test indexof method
     int index = myList.IndexOf(20);
     std::cout << "Index of 20: " << index << std::endl;
 
+    // Test remove method
     int removedValue = myList.Remove(2);
     std::cout << "Removed element at index 2: " << removedValue << std::endl;
 

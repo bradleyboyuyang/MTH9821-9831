@@ -114,7 +114,7 @@ public:
         }
 
         Node<T>* removedNode;
-        T removedData;
+  
         if (index == 0) {
             removedNode = head;
             head = head->next;
@@ -127,7 +127,7 @@ public:
             current->next = current->next->next;
         }
 
-        removedData = removedNode->data;
+        T& removedData = removedNode->data;
         
         // update the LinkedList size
         size--;

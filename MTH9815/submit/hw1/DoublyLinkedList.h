@@ -15,6 +15,8 @@ template <typename T>
 class DNode : public Node<T> {
 public:
     DNode<T>* prev;
+    
+    // Constructor of DNode
     DNode(const T& value) : Node<T>(value), prev(nullptr) {}
 };
 
@@ -25,11 +27,14 @@ protected:
     DNode<T>* tail;
 
 public:
+    // Constructor to initialize and empty DoublyLinkedList
     DoublyLinkedList() : LinkedList<T>(), tail(nullptr) {}
-
+    
+    // Add the specified element at the end of the list
     void Add(const T& value) {
         DNode<T>* newNode = new DNode<T>(value);
-
+        
+        // Check if the DoublyLinkedList is empty
         if (this->head == nullptr) {
             this->head = newNode;
         } else {
@@ -38,10 +43,13 @@ public:
         }
         
         tail = newNode;
+        // update the DoublyLinkedList size
         this->size++;
     };
     
+    // Add the specified element at the specified index
     void Insert(const T& value, int index) {
+        // Check the validity of index
         if (index < 0 || index > this->size) {
             std::cerr << "Index out of range." << std::endl;
             return;
@@ -49,6 +57,7 @@ public:
 
         DNode<T>* newNode = new DNode<T>(value);
 
+        // Check if the inserted DNode is the head
         if (index == 0) {
             newNode->next = this->head;
             if (this->head != nullptr) {
@@ -68,16 +77,20 @@ public:
             current->next = newNode;
         }
 
+        // update the DoublyLinkedList size
         this->size++;
     };
     
+    // Remove the element at the specified index and return it
     T& Remove(int index) {
+        // Check the validity of index
         if (index < 0 || index >= this->size) {
             throw std::out_of_range("Index out of range.");
         }
 
         DNode<T>* removedNode;
 
+        // Check if the removed DNode is the head
         if (index == 0) {
             removedNode = static_cast<DNode<T>*>(this->head);
             this->head = this->head->next;
@@ -98,6 +111,7 @@ public:
 
         T& removedData = removedNode->data;
         
+        // update the DoublyLinkedList size
         this->size--;
 
         return removedData;

@@ -44,7 +44,7 @@ void test_linkedlist() {
     int index = myList.IndexOf(20);
     std::cout << "Index of 20: " << index << std::endl;
 
-    int removedValue = myList.Remove(2);
+    int& removedValue = myList.Remove(2);
     std::cout << "Removed element at index 2: " << removedValue << std::endl;
 
     std::cout << "Size after removal: " << myList.Size() << std::endl;
@@ -92,7 +92,7 @@ void test_doublylinkedlist() {
     int index = myDoublyList.IndexOf(20);
     std::cout << "Index of 20: " << index << std::endl;
 
-    int removedValue = myDoublyList.Remove(2);
+    int& removedValue = myDoublyList.Remove(2);
     std::cout << "Removed element at index 2: " << removedValue << std::endl;
 
     // Print the size of the list after removal
