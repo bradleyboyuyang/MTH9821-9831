@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Read the data from the csv file
-exact = 4.3756
+exact = 4.375599651961108
 data = pd.read_csv('output.csv', names=['N', 'Value', 'Error']).set_index('N')
 
 # get the values of index N when the error first decrease and then increase
