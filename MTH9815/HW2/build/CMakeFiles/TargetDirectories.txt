@@ -1,0 +1,5 @@
+/Users/yicheng.sun/Desktop/course_23fall/MTH9821/MTH9815/HW2/build/CMakeFiles/writer.dir
+/Users/yicheng.sun/Desktop/course_23fall/MTH9821/MTH9815/HW2/build/CMakeFiles/reader.dir
+/Users/yicheng.sun/Desktop/course_23fall/MTH9821/MTH9815/HW2/build/CMakeFiles/test_product.dir
+/Users/yicheng.sun/Desktop/course_23fall/MTH9821/MTH9815/HW2/build/CMakeFiles/edit_cache.dir
+/Users/yicheng.sun/Desktop/course_23fall/MTH9821/MTH9815/HW2/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/Users/yicheng.sun/Desktop/course_23fall/MTH9821/MTH9815/HW2/build",
+  "command": "/usr/bin/clang++  -I/opt/homebrew/include -g -std=c++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=13.6 -o CMakeFiles/writer.dir/q1-writer.cpp.o -c /Users/yicheng.sun/Desktop/course_23fall/MTH9821/MTH9815/HW2/q1-writer.cpp",
+  "file": "/Users/yicheng.sun/Desktop/course_23fall/MTH9821/MTH9815/HW2/q1-writer.cpp",
+  "output": "CMakeFiles/writer.dir/q1-writer.cpp.o"
+},
+{
+  "directory": "/Users/yicheng.sun/Desktop/course_23fall/MTH9821/MTH9815/HW2/build",
+  "command": "/usr/bin/clang++  -I/opt/homebrew/include -g -std=c++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=13.6 -o CMakeFiles/reader.dir/q1-reader.cpp.o -c /Users/yicheng.sun/Desktop/course_23fall/MTH9821/MTH9815/HW2/q1-reader.cpp",
+  "file": "/Users/yicheng.sun/Desktop/course_23fall/MTH9821/MTH9815/HW2/q1-reader.cpp",
+  "output": "CMakeFiles/reader.dir/q1-reader.cpp.o"
+},
+{
+  "directory": "/Users/yicheng.sun/Desktop/course_23fall/MTH9821/MTH9815/HW2/build",
+  "command": "/usr/bin/clang++  -I/opt/homebrew/include -g -std=c++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=13.6 -o CMakeFiles/test_product.dir/test_products.cpp.o -c /Users/yicheng.sun/Desktop/course_23fall/MTH9821/MTH9815/HW2/test_products.cpp",
+  "file": "/Users/yicheng.sun/Desktop/course_23fall/MTH9821/MTH9815/HW2/test_products.cpp",
+  "output": "CMakeFiles/test_product.dir/test_products.cpp.o"
+}
+]
